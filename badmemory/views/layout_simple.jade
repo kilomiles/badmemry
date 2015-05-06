@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    <!--[if lt IE 9]>
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    <![endif]-->
+    block head
+  body
+    //- TODOXXX classes for styling
+    ul
+      //- TODOXXX set .active on the relevant portion of the navbar
+      li: a(href="/") bad memory
+      if user && user.name === 'admin'
+        // special case: admin console
+        //- TODOXXX admin console links should be in red
+        li: a(href="/admin") debug
+        li: a(href="/admin/users") users
+      else if user.username
+        // for logged-in users
+        li: a(href="/study") study
+        li: a(href="/words") words
+        li: a(href="/pages") pages
+        li: a(href="/sentences") sentences
+      else
+        // static website
+        li: a(href="/about") about
+        li: a(href="/roadmap") roadmap
+        li: a(href="/team") team
+        li: a(href="/login") login
+        li: a(href="/signup") signup 
+    ul
+      block topbar_right
+      if user && user.name === 'admin'
+        //- TODOXXX admin console links should be in red
+        li: a(href="/admin") admin console
+      else if user
+        li: a(href="/profile") #{user.username}
+        li: a(href="/logout") Logout
+      else
+        //- TODOXXX hover/popover login form
+        li: a(href="#") login
+    block content

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Project Bad Memory - How it Works</title>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><span id="logo-a">bad</span> <span id="logo-b">memory</span></a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <!-- This nonsense turns into a "menu" icon. -->
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="#">How It Works</a></li>
+            <li><a href="project_roadmap.html">Project Roadmap</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="sign-in" href="#">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h1>A One-Stop Shop for Vocabulary Study</h1>
+
+      <p>Learning a foreign language involves developing a range of related skills, all in parallel. Listening comprehension, speaking, and basic literacy must all be practiced individually. Out of all these, literacy is a crucial supporting skill, which can expose you to orders of magnitude more information than you would discover just practicing the language in-person.</p>
+
+      <p><strong>Vocabulary and grammar must be learned in context.</strong> It's no good to just memorize translations from the dictionary and drill grammar rules, and hope that will be enough to orient you in how to make use of those words in a real-life context. Reading websites and original literature, written by native speakers for native speakers, is the best way to acquire the countless nuances and exceptions pertaining to each word.</p>
+
+      <p><strong>What you have learned, you must review.</strong> Once you have seen a new word, or an unexpected usage of a word you already know, it is easy to forget. The human memory works best when reviewing information regularly at increasing intervals, a principle known as <em>spaced repetition</em>. People have devised methods such as <a href="#">AntiMoon</a>, <a href="#">10,000 sentences</a>, or <a href="#">MCD</a>, which allow one to study grammar and vocabulary in context, by collecting sample sentences from
+reading material and returning to review them at increasing intervals.</p>
+
+        <p>Up until now, these methods have involved a large manual component: collecting texts, manually extracting sample sentences, and formatting them into flashcards for a program such as <a href="#">Anki</a> or <a href="#">Surusu</a>. Hours of tedious work that could be eliminated.</p>
+
+        <p>This is where we come in.</p>
+
+      <h3>Track the webpages and sample sentences you are interested in learning.</h3>
+
+      <!-- TODOXXX screenshot of the website table -->
+      <p>As you are reading a webpage in a foreign language, a click on our bookmarklet will send it to Bad Memory; we will index the text against our target vocabulary, and build a collection sample sentences that contain the words you are trying to learn. Collect as many webpages as you want to build up a large repository of sample sentences, then star the ones you are most interested in learning how to read, to prioritize your studies. Search and filter to see how far along you are to understanding all the different uses of a given word.</p>
+
+      <h3>Track the vocabulary you are studying, right on the website you're reading.</h3>
+      <!-- TODOXXX screenshot/demo of heatmap view -->
+      <p>Our innovative heatmap view lets you track how well you understand a page, right on the webpage. We highlight every word that you are currently studying in colours ranging from red to green. Hover on any word to see its definition, then click on further words to add them to your study vocabulary. As the page turns more and more green, you are closer and closer to understanding every single word on it.</p>
+
+      <!-- TODOXXX screenshot of individual page view -->
+      <p>The heatmap view can be used on an entire page as you browse, allowing you to get a quick overview of how much you have to learn to understand a new webpage, and making it quicker to collect words and webpages as you browse.</p>
+
+      <h3>Use Spaced Repetition to optimize your vocabulary study.</h3>
+
+      <!-- TODOXXX screenshot of study view -->
+      <p><a href="http://en.wikipedia.org/wiki/Spaced_repetition">Spaced Repetition Systems</a> were originally developed by psychologists seeking to understand the human learning process. They discovered that the optimal way for the human mind to acquire information was to review each piece of information at increasingly longer intervals, in order to gradually cement it in long-term memory. In the computer age, the guesswork of how to space out these reviews has been eliminated, as a flashcard program can be made to intelligently compute the intervals based on your performance, getting the most information into your brain with the least effort. Bad Memory includes an SRS flashcard system for reviewing the sample sentences that you have collected, using cards that follow a dead-simple fill-in-the-blank format (known as <a href="#">Massive-Context Cloze Deletions</a>, or MCDs).</p>
+
+      <p><strong>We make it easier.</strong> With a conventional flashcard program like Anki, entering data for thousands of sentences, and making MCD cards, is a tedious process which adds up to hours of time spent on data entry rather than actually studying the language. But Bad Memory automatically generates flashcards from the sample sentences that you are interested in studying, and schedules them to appear as necessary to reach your study goal. You can even reconfigure the flashcard format &ndash; without losing your study progress.</p>
+      
+      <h2>It Couldn't Be Simpler</h2>
+
+      <p>All you need to do is:</p>
+
+      <ol id="benefits">
+        <li>Add webpages you want to learn to Bad Memory.</li>
+        <li>Click on the words you are interested in studying.</li>
+        <li>Study the resulting flashcards with our built-in SRS program.</li>
+      </ol>
+
+    </div>
+
+    <div class="signup-form background_id">
+      <div class="container">
+        <h3>Sign up for Bad Memory:</h3>
+        <div class="row">
+          <div class="col-md-8">
+            <form>
+              <input type="text" name="username" placeholder="Pick a username" />
+              <input type="text" name="email" placeholder="Enter your email address" />
+              <input type="password" name="password" placeholder="Select a password" />
+              <input type="password" name="password2" placeholder="Confirm your password" />
+              <!-- XXX password strength meter appears here -->
+              <button class="pull-right" type="button">Sign Up &raquo;</button>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <p id="disclaimer">By signing up for Bad Memory, you indicate agreement to our <a href="#">terms of service</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap & jQuery JS (load last of all) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>    <script src="js/bootstrap.min.js"></script>
+
+    <div class="footer">
+      <p>Copyright &copy; 2014 <a href="about.html">Team Bad Memory</a>.</p>
+    </div>
+   </body>
+</html>

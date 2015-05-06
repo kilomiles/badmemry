@@ -1,0 +1,87 @@
+body {
+    padding-top: 50px;
+}
+
+h1 {
+    padding: 18px 10px;
+    text-align: center;
+}
+
+.lead {
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.form_info {
+	padding: 3px;
+	margin: 2px;
+}
+
+.sign_up_div {
+	margin: auto;
+	width: 50%;
+	
+}
+
+.sign_up_form {
+	margin: auto;
+	padding-left: 15%
+}
+
+.headline_grabber {
+	margin: auto;
+	width: 50%;
+}
+
+#home_color {
+	background-color: #6DD5F7;
+	border-radius: 5px;
+}
+
+.navbar-brand {
+    color: #0F0F09;
+}
+
+
+.navbar-brand .bad {
+    color: #CC0066;
+}
+
+/* Pages file begin. */
+.well input {
+    margin: 0;
+    padding-left: 30px;
+}
+
+#search-icon-img {
+	position:absolute;
+    margin: 7px 0px 0px 7px;
+	width:15px;
+	height:15px;
+}
+
+.star-icon-img, .pie-icon-img {
+    margin-right: 15px;
+}
+.trash-icon-img {
+display:block;
+    width: 20px;
+    height: 20px;
+    top: 0; bottom:0; left: 0; right:0;
+    margin: auto;
+}
+
+#checkbox-filter {
+    margin-right: 5px;
+}
+
+#username {
+    color:#999999;
+    margin-right: 10px;
+}
+
+.background_id{
+	background-image:url('images/background.png');
+	background-repeat:repeat-xy;
+}
+/* Pages file end. */

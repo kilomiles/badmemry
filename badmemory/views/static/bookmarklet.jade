@@ -1,0 +1,33 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - Bookmarklet
+
+block body
+  // Main header and button 
+  .jumbotron
+    .container
+      h1 Bad Memory Bookmarklet
+      p.lead
+        | Add your favourite foreign language pages to Bad Memory with the click of a single button.
+    .panel.panel-success.button-panel
+      .panel-heading Drag this button to your Bookmarks Bar!
+      .panel-body
+        a.btn.btn-lg.btn-success(href='javascript:function sendToBadMemory(){window.location=\'https://localhost:4000/pages?url=\'+document.location.href;}sendToBadMemory();void(0)', role='button') Add to Bad Memory
+    .container
+      .row.background_id
+        .col-md-4.inner-column
+          span.glyphicon.glyphicon-info-sign
+          h2  How does it work?
+          p
+            | When you visit a page whose foreign language content you'd like to learn, you simply click the Bad Memory button in your bookmarks tab and the page will be added to your list of webpages.
+        .col-md-4.inner-column
+          span.glyphicon.glyphicon-question-sign
+          h2  But why?
+          p
+            | Using our bookmarklet allows you to add pages from anywhere on the web to your Bad Memory database at the click of a button. Instead of copying, pasting and switching pages, all it takes is one click. 4 words: it saves you time!
+        .col-md-4.inner-column
+          span.glyphicon.glyphicon-lock
+          h2  Safe and secure
+          p
+            | Your safety is our #1 priority! Using this bookmarklet is as safe as adding a page to your webpage list manually. There's no need to install any software. Just drag the above green button to your bookmarks tab and that's it!

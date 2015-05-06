@@ -1,0 +1,67 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - User profile
+
+block content
+  .profile-settings.container-fluid
+        .col-sm-3.col-md-2.sidebar
+          ul.nav.nav-pills.nav-pills-stacked
+            li
+              a(href='user_progress') Overview
+            li.active
+              a(href='#') Account Settings
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+            h1.page-header(style="margin-top:10px") Account Information: #{user.username}
+            if updateStatus === "Fail"
+              .alert.alert-danger #{updateMessage}
+            else if updateStatus == "Success"
+              .alert.alert-success #{updateMessage}
+            form(role='form' action='profile_update' method='post')
+              .form-group
+                h2.page-header Basic Information
+                label(for='username') Username
+                input(type='hidden', name='_csrf', value='#{csrf}')
+                input#realName.profile-field.form-control(type='text', placeholder='Enter New Username', name=
+                'new_user_name')
+                label(for='newPwd1') Password
+                input.profile-field.form-control(type='password', placeholder='Password', name='user_password')
+                #divCheckUser
+                button.btn.btn-default(type='submit', name='profile_button', value='username_button', id='username_button') Save Information
+            form(role='form' action='profile_update' method='post')
+              .form-group
+                h2.page-header Change Email
+                label(for='userEmail') New Email
+                input(type='hidden', name='_csrf', value='#{csrf}')
+                input#userEmail.profile-field.form-control(type='text', placeholder='joedoe@example.com', name='new_email')
+                label(for='pwdVerification') Password
+                input#pwdVerification.profile-field.form-control(type='password', placeholder='Password' name='user_password')
+                #divCheckEmail
+                button.btn.btn-default(type='submit', name='profile_button', value='email_button', , id='email_button') Save New Email
+            form(role='form' action='profile_update' method='post')
+              .form-group
+                h2.page-header Change password
+                input(type='hidden', name='_csrf', value='#{csrf}')
+                label(for='pwdVerification') Old Password
+                input#pwdVerification.profile-field.form-control(type='password', placeholder='Old Password', name='user_password' )
+                label(for='newPwd1') New password
+                input#newPwd1.profile-field.form-control(type='password', placeholder='New Password' name='new_password_1')
+                label(for='newPwd2') Re-type new password
+                input#newPwd2.profile-field.form-control(type='password', placeholder='Repeat New Password', name='new_password_2')
+                #divCheckPassword
+                button.btn.btn-default(type='submit', name='profile_button', value='password_button', , id='password_button') Change Password
+            form(role='form' action='profile_update' method='post')
+              .form-group
+                h2.page-header Delete Account
+                .span.label.label-warning
+                  | NOTE: This process is NOT reversible! 
+                  br
+                br
+                label(for='pwdVerification') Enter Password
+                input(type='hidden', name='_csrf', value='#{csrf}')
+                input#pwdVerification.profile-field.form-control(type='password', placeholder='Password', name='user_password')
+                button.btn.btn-default(type='submit', name='profile_button', value='delete_button') Delete Account
+    block scripts
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/profile_update.js')

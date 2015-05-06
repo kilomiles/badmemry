@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Project Bad Memory - Project Roadmap</title>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><span id="logo-a">bad</span> <span id="logo-b">memory</span></a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <!-- This nonsense turns into a "menu" icon. -->
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="how_it_works.html">How It Works</a></li>
+            <li class="active"><a href="#">Project Roadmap</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="sign-in" href="#">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content background_id" >
+      <h1>Project Roadmap</h1>
+
+      <p>We plan to implement Bad Memory as our CSC309 term project, finishing most of the functionality by the Project 2 deadline on July 15. Project 3 will be devoted to addressing any issues with the performance and security of the website, including a stress-test of the functionality by both real and simulated users.</p>
+
+      <h2>Product Backlog</h2>
+
+      <p>The below product backlog ranks tasks from 1 to 3 in order of difficulty. We do not provide exact time estimates because time-to-implement may vary depending on the skill level of the teammate doing the task, and how much time is spent studying prior reference materials.</p>
+
+      <h3>Backend Functionality</h3>
+
+      <ul class="backlog">
+        <li><span class="est3">3</span> Basic Database Design: tables for sentences, words, pages; operation log; indexing for search.</li>
+        <li><span class="est2">2</span> REST API for Database: issue database operations through a RESTful API.</li>
+        <li><span class="est2">2</span> Scrape Simple Webpages: obtain the text of a webpage and use it to populate the database with sentences and words.</li>
+        <li><span class="est3">3</span> Store Webpages in Account: store a full copy of the webpage in the user's account.</li>
+      </ul>
+
+      <h3>Management Interface</h3>
+
+      <ul class="backlog">
+        <li><span class="est1">1</span> Account Signup & Management: standard features to create an account, manage password, log in & out.</li>
+        <li><span class="est1">1</span> Sentence, Word, Page Tables: display tables of corresponding database entries.</li>
+        <li><span class="est2">2</span> Search Functionality: allow to user to filter the tables according to various attributes.</li>
+        <li><span class="est1">1</span> Manually Add Webpages & Sentences: form allowing the user to manually add a URL or text fragment for study.</li>
+        <li><span class="est2">2</span> Add Webpages via Bookmarklet: provide a bookmarklet (with install instructions) that adds the current URL to Bad Memory.</li>
+        <li><span class="est3">3</span> Heatmap UI: colour and highlight words according to their study status; click to add/remove from study list.</li>
+        <li><span class="est3">3</span> Show Website Contents with Heatmap UI: display a web page, with the heatmap applied to the text (similarly to Google Translate).</li>
+        <li><span class="est2">2</span> Obtain Definitions from Dictionary: hover in heatmap view for a definition; add dictionary entry to sample sentences.</li>
+      </ul>
+
+      <h3>Study Interface</h3>
+
+      <ul class="backlog">
+        <li><span class="est2">2</span> Generate Study Cards from Sentences: follow formats such as <a href="#">MCD</a> or <a href="#">10,000 sentences</a>, depending on the user's preferences.</li>
+        <li><span class="est2">2</span> <a href="http://www.supermemo.com/english/ol/sm2.htm">SuperMemo2</a> Algorithm: provide REST operations to record a review for a given card.</li>
+        <li><span class="est2">2</span> Provide Review Statistics and Study Goals: the study goals are used to adjust the suggested number of reviews/new cards per day.</li>
+        <li><span class="est1">1</span> Display Review Statistics in Chart Form: these will be visible in the profile screen.</li>
+        <li><span class="est2">2</span> Study Screen: display a card for review and allow the user to score themselves.</li>
+      </ul>
+
+      <h2>Sprint Backlog</h2>
+
+      <p>Our first sprint will last a week, <span class="dates">June 16 to June 23</span>. We plan to implement the following functionality:</p>
+
+      <ul class="backlog">
+        <li><span class="est3">3</span> Basic Database Design</li>
+        <li><span class="est2">2</span> REST API for Database</li>
+        <li><span class="est2">2</span> Scrape Simple Webpages</li>
+        <li><span class="est1">1</span> Manually Add Webpages & Sentences</li>
+        <li><span class="est2">2</span> Obtain Definitions from Dictionary</li>
+        <li><span class="est1">1</span> Sentence, Word, Page Tables</li>
+        <li><span class="est1">1</span> Account Signup & Management</li>
+      </ul>
+
+      <p>This provides a basic interface and the ability to use it to populate the database with real data for the further implementation sprints to make use of.</p>
+
+      <h2>Future Sprints</h2>
+
+      <p>The content of further sprints will be decided on a weekly basis, depending on progress made during the previous week.</p>
+
+      <ol class="schedule">
+        <li><span class="dates">June 24 to July 1</span> second functionality sprint &ndash; SuperMemo2 studying + statistics, webpage scraping+storage enhancements.</li>
+        <li><span class="dates">July 2 to July 8</span> third functionality sprint &ndash; bookmarklet, webpage reading view.</li>
+        <li><span class="dates">July 9 to July 15</span> final sprint for Project 2; polish and release the web application.</li>
+        <li><span class="dates">July 16 to July 22</span> address security and scaling issues for Project 3.</li>
+        <li><span class="dates">July 23 to ??</span> <em>further sprints as necessary to address Project 3 issues....</em></li>
+      </ol>
+
+    </div>
+
+    <!-- Bootstrap & jQuery JS (load last of all) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>    <script src="js/bootstrap.min.js"></script>
+
+    <div class="footer">
+      <p>Copyright &copy; 2014 <a href="about.html">Team Bad Memory</a>.</p>
+    </div>
+</body>
+</html>

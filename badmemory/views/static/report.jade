@@ -1,0 +1,360 @@
+//Final Report Combining about.jade, team.jade, and roadmap.jade
+//along with information on improvements with scaling/security
+
+extends ../layout
+
+block head
+  title Project Bad Memory - How it Works
+  
+block content
+    h1
+      mark
+        |A One-Stop Shop for Vocabulary Study
+    p
+      | Learning a foreign language involves developing a range of related skills, all in parallel. Listening comprehension, speaking, and basic literacy must all be practiced individually. Out of all these, literacy is a crucial supporting skill, which can expose you to orders of magnitude more information than you would discover just practicing the language in-person.
+    p
+      strong Vocabulary and grammar must be learned in context.
+      |  It's no good to just memorize translations from the dictionary and drill grammar rules, and hope that will be enough to orient you in how to make use of those words in a real-life context. Reading websites and original literature, written by native speakers for native speakers, is the best way to acquire the countless nuances and exceptions pertaining to each word.
+    p
+      strong What you have learned, you must review.
+      |  Once you have seen a new word, or an unexpected usage of a word you already know, it is easy to forget. The human memory works best when reviewing information regularly at increasing intervals, a principle known as
+      em  spaced repetition
+      | . People have devised methods such as 
+      a(href='#') AntiMoon
+      | , 
+      a(href='#') 10,000 sentences
+      | , or 
+      a(href='#') MCD
+      | , which allow one to study grammar and vocabulary in context, by collecting sample sentences from
+      | reading material and returning to review them at increasing intervals.
+    p
+      | Up until now, these methods have involved a large manual component: collecting texts, manually extracting sample sentences, and formatting them into flashcards for a program such as 
+      a(href='#') Anki
+      |  or 
+      a(href='#') Surusu
+      | . Hours of tedious work that could be eliminated.
+    p This is where we come in.
+    h3 Track the webpages and sample sentences you are interested in learning.
+
+    // TODOXXX screenshot of the website table
+
+    p
+      | As you are reading a webpage in a foreign language, a click on our bookmarklet will send it to Bad Memory; we will index the text against our target vocabulary, and build a collection sample sentences that contain the words you are trying to learn. Collect as many webpages as you want to build up a large repository of sample sentences, then star the ones you are most interested in learning how to read, to prioritize your studies. Search and filter to see how far along you are to understanding all the different uses of a given word.
+    h3 Track the vocabulary you are studying, right on the website you're reading.
+    
+    // TODOXXX screenshot/demo of heatmap view 
+
+    p
+      | Our innovative heatmap view lets you track how well you understand a page, right on the webpage. We highlight every word that you are currently studying in colours ranging from red to green. Hover on any word to see its definition, then click on further words to add them to your study vocabulary. As the page turns more and more green, you are closer and closer to understanding every single word on it.
+    
+    // TODOXXX screenshot of individual page view 
+
+    p
+      | The heatmap view can be used on an entire page as you browse, allowing you to get a quick overview of how much you have to learn to understand a new webpage, and making it quicker to collect words and webpages as you browse.
+    h3 Use Spaced Repetition to optimize your vocabulary study.
+    
+    // TODOXXX screenshot of study view 
+
+    p
+      a(href='http://en.wikipedia.org/wiki/Spaced_repetition') Spaced Repetition Systems
+      |  were originally developed by psychologists seeking to understand the human learning process. They discovered that the optimal way for the human mind to acquire information was to review each piece of information at increasingly longer intervals, in order to gradually cement it in long-term memory. In the computer age, the guesswork of how to space out these reviews has been eliminated, as a flashcard program can be made to intelligently compute the intervals based on your performance, getting the most information into your brain with the least effort. Bad Memory includes an SRS flashcard system for reviewing the sample sentences that you have collected, using cards that follow a dead-simple fill-in-the-blank format (known as 
+      a(href='#') Massive-Context Cloze Deletions
+      | , or MCDs).
+    p
+      strong We make it easier.
+      |  With a conventional flashcard program like Anki, entering data for thousands of sentences, and making MCD cards, is a tedious process which adds up to hours of time spent on data entry rather than actually studying the language. But Bad Memory automatically generates flashcards from the sample sentences that you are interested in studying, and schedules them to appear as necessary to reach your study goal. You can even reconfigure the flashcard format – without losing your study progress.
+    h2 It Couldn't Be Simpler
+    p All you need to do is:
+    ol#benefits
+      li Add webpages you want to learn to Bad Memory.
+      li Click on the words you are interested in studying.
+      li Study the resulting flashcards with our built-in SRS program.
+      li View how far you'ver progressed with easy to read pie charts
+    br
+    h1
+      mark
+        |About the Bad Memory Team
+      br
+      br
+      .highlight
+        h2 Serguei Makarov
+        img.team_pic.pull-right(src='/TeamPhotos/SM.png')
+        br
+        p
+          | Serguei Makarov (CDF username: g0serhei) is a fourth year computer science student at UofT, with a longtime interest in languages (whether programming languages, or the more messy kind) and computerized learning. He was surprised and delighted that all of these interests would come in handy for a CSC309 project, of all things, and is looking forward to making the language-study application that he wishes he had several years ago.
+      .highlight
+        h2 Kevin Zhang
+        img.team_pic.pull-right(src='/TeamPhotos/KZ1.jpg')
+        br
+        p
+          | Kevin Zhang (CDF username: c4zhangl) is a fourth year Electrical and Computer Engineer at UofT, currently on his Professional Experience Year. Currently, Kevin is doing research on improving database performance at the University. This will be Kevin's first foray into the world of web programming, and he is already amazed at the versatility of the web. Kevin looks forward to building a souped-up version of Anki!
+      .highlight
+        h2 Miles Gilchrist
+        img.team_pic.pull-right(src='/TeamPhotos/MG.png')
+        br
+        p
+          | Miles Gilchrist (CDF username: g2miles) is a fourth year Computer Science specialist with an interest in computer systems. He has also studied various topics in cognitive science, and is always looking for ways to make learning easier, more effective, and fun. He is excited to contribute to what will be his first web application by helping to build a valuable toolkit for the modern language learner.
+      .highlight
+        h2 Hardarshan (Harmen) Kahlon
+        img.team_pic.pull-right(src='/TeamPhotos/HK.jpeg')
+        br
+        p
+          | My name is Hardarshan Kahlon (CDF username: g3h) but I like to go by Harmen. I’m a 4th year Computer Science specialist student with interests in community engagement through programming and the business aspect of computer science, hence why I am doing a focus in video game design and a minor in economics. In this project, I will utilize my past experience in HTML, PHP, CSS and SQL to contribute towards the development of the webpage, the use of the database and more. In the past, I have worked as a teaching assistant in first year computer science courses but at the moment, I am a full-time student. Some of skills include working well within the structure of a team, whether that involves taking directives or providing my expertise, time management and being clutch (seriously). Due to the fact that many of the technologies that we will use in this project are new to all of the group members, I expect there to be solid challenges but I, along with my teammates, am determined to overcome them and release an excellent product.
+
+    h1 
+      mark
+        |Project Roadmap
+        br
+    p
+      |We plan to implement Bad Memory as our CSC309 term project, finishing most of the functionality by the Project 2 deadline on July 22. Project 3 will be devoted to addressing any issues with the performance and security of the website, including a stress-test of the functionality by both real and simulated users.
+      h2 Product Backlog
+      p
+        | The below product backlog ranks tasks from 1 to 3 in order of difficulty. We do not provide exact time estimates because time-to-implement may vary depending on the skill level of the teammate doing the task, and how much time is spent studying prior reference materials.
+      h3 Backend Functionality
+      ul.backlog
+       li
+         span.est3 3
+         | Implement security functionality such as: SSL, pg module (stops SQL injections)
+       li
+         span.est3 3
+         | Implement Nginx to improve load balancing  
+          
+       li
+          span.est3 3
+          | Store Webpages in Account: store a full copy of the webpage in the user's account. (Partly implemented.)
+        li
+          span.est3 3
+          | Basic Database Design: tables for sentences, words, pages; operation log; indexing for search.
+        li
+          span.est2 2
+          | REST API for Database: issue database operations through a RESTful API. (Not implemented.)
+        li
+          span.est2 2
+          | Scrape Simple Webpages: obtain the text of a webpage and use it to populate the database with sentences and words.
+      h3 Management Interface
+      ul.backlog
+        li
+           span.est3 3
+           | Heatmap UI: colour and highlight words according to their study status; click to add/remove from study list.
+        li
+          span.est3 3
+          | Show Website Contents with Heatmap UI: display a web page, with the heatmap applied to the text (similarly to Google Translate). (Partly implemented.)
+        li
+          span.est2 2
+          | Add Webpages via Bookmarklet: provide a bookmarklet (with install instructions) that adds the current URL to Bad Memory.
+        li
+          span.est2 2
+          | Obtain Definitions from Dictionary: hover in heatmap view for a definition; add dictionary entry to sample sentences.
+        li
+          span.est2 2
+          | Search Functionality: allow to user to filter the tables according to various attributes. (Partly implemented.)
+        li
+          span.est1 1
+          | Account Signup & Management: standard features to create an account, manage password, log in & out.
+        li
+          span.est1 1
+          | Sentence, Word, Page Tables: display tables of corresponding database entries.
+        li
+          span.est1 1
+          | Manually Add Webpages & Sentences: form allowing the user to manually add a URL or text fragment for study.
+      h3 Study Interface
+      ul.backlog
+        li
+          span.est2 2
+          | Generate Study Cards from Sentences: follow formats such as 
+          a(href='#') MCD
+          |  or 
+          a(href='#') 10,000 sentences
+          | , depending on the user's preferences. (Partly implemented.)
+        li
+          span.est2 2
+          a(href='http://www.supermemo.com/english/ol/sm2.htm') SuperMemo2
+          |  Algorithm: provide REST operations to record a review for a given card.
+        li
+          span.est2 2
+          | Provide Review Statistics and Study Goals: the study goals are used to adjust the suggested number of reviews/new cards per day. (Partly implemented.)
+        li
+          span.est2 2
+         | Study Screen: display a card for review and allow the user to score themselves.
+        li
+          span.est1 1
+          | Display Review Statistics in Chart Form: these will be visible in the profile screen.
+      h2 Sprint Backlog
+      p
+        | Our first sprint will last a week, 
+        span.dates June 16 to June 23
+        | . We plan to implement the following functionality:
+      ul.backlog
+        li
+          span.est3 3
+          | Basic Database Design
+        li
+          span.est2 2
+          | REST API for Database
+        li
+          span.est2 2
+          | Scrape Simple Webpages
+        li
+          span.est1 1
+          | Manually Add Webpages & Sentences
+        li
+          span.est2 2
+          | Obtain Definitions from Dictionary
+        li
+          span.est1 1
+          | Sentence, Word, Page Tables
+        li
+          span.est1 1
+          | Account Signup & Management
+      p
+        | This provides a basic interface and the ability to use it to populate the database with real data for the further implementation sprints to make use of.
+      h2 Future Sprints
+      p
+        | The content of further sprints will be decided on a weekly basis, depending on progress made during the previous week.
+      ol.schedule
+        li
+          span.dates June 24 to July 1
+          | second functionality sprint – SuperMemo2 studying + statistics, webpage scraping+storage enhancements.
+        li
+          span.dates July 2 to July 8
+          | third functionality sprint – bookmarklet, webpage reading view.
+        li
+          span.dates July 9 to July 15
+          | final sprint for Project 2; polish and release the web application.
+        li
+          span.dates July 16 to July 22
+          | address security and scaling issues for Project 3.
+        li
+          span.dates July 23 to ??
+          em further sprints as necessary to address Project 3 issues....
+    h1
+      mark
+        |Individual Contributions
+    h3 
+      |Kevin Zhang
+    ul
+      li 
+        |Implemented nginx for optimal load balancing
+      li
+        |Put in security measures such as: SSL on nginx/web application, pg (node module) to ensure no SQL injections happen.
+      li 
+        |Enhanced profile system, adding data "checks" on backend
+      li
+        |Implemented pie graphs to provide user progress
+      li
+        |Fixed serverside routing/application bugs
+      li
+        |Used Apache's ab tool to do performance testing
+      li 
+        |Worked on final report
+    h3
+      |Serhei Makarov
+    ul
+    h3
+      |Miles Gilchrist
+    ul
+      li
+        |Updated the study card interface found on the Study page (progress bar, flip/delete options, backside)
+      li
+        |Reconfigured HeatMap code to store a study word's sample sentences in the database
+      li
+        |Fixed problem in HeatMap where words containing single quotes (') break SQL queries
+      li
+        |Implemented the table view for Words, including accurate percentages and a delete operation
+      li
+        |Modified the UI of various pages (namely: /profile, /heatmap)
+      li
+        |Worked on final report
+    h3
+      |Hardarshan (Harmen) Kahlon
+    ul
+      li
+        |Finalized algorithm to scrape data from the web; made it work with all Germanic-or-not languages
+      li
+        |Implemented the SRS algorithm to display correct cards and set data
+      li
+        |Set up and completed the Pages section to track and display pages in repo
+      li
+        |Completed the Sentences section to display sentences for user to study
+      li
+        |Added enhanced features like deletion and filtering based on user events
+      li
+        |Handled errors with interaction between the app and the database
+      li
+        |Worked on final report
+    h1
+      mark
+        |Stress testing results 
+    p
+      |Team Badmemory used two different tools to measure server stress. 
+    p
+      |First, Badmemory used Apache's built-in stress testing software ab to simulate concurrent users with multiple requests. Below is a graph simulating 250 (the max that is allowed) concurrent users each making 300 requests. The test was run on a 2012 13-inch Macbook Pro with 4gb of RAM and a dual core processor. The requests are made on Badmemory's homepage. 
+    p
+      |Please note that the test results are in milliseconds
+    div(style="text-align:center;")
+      img(width='75%' height='auto' src='/images/nginx_final.png')
+    br
+    br
+    p
+      |The second test simulated a lighter load, with 50 concurrent users each making 1000 requests. Based on the results, there is an apparent decline in response time as the numbers go from 50 to 250. This is because the 3 servers the team iniated are running on a local machine with limited performance. If the node servers had been spawned on multiple machines, there would be a less noticable impact on performance
+    br
+    div(style="text-align:center;")
+      img(width='75%' height='auto' src='/images/nginx_light_loading.png') 
+    br
+    br
+    br
+    p
+      |JMeter was also used. The results below are in milliseconds. The automated request is performed on BadMemory's homepage. JMeter fails at simulating 10,000 users.
+    div(style="text-align:center;")
+      h3 100 Users:
+      img(width='75%' height='auto' src='images/100users.png')
+      br
+      h3 500 Users:
+      img(width='75%' height='auto' src='images/500users.png')
+      br
+      h3 1,000 Users:
+      img(width='75%' height='auto' src='images/1000users.png')
+      br
+      h3 10,000 Users:
+      img(width='75%' height='auto' src='images/10000users.png')
+    h1
+      mark
+        |Security implemented
+    p
+      The Badmemory team has implemented various security functionality in our web app. These include:
+    ul 
+      li 
+        |Bcrypt to salt user generated passwords. This prevents user data from being lost even if the database is compromised 
+      li 
+        |Passport.js: a Node module that simplifies user login/signup and ensures that each session is secured through a unique cookie
+      li 
+        |OpenSSL: used OpenSSL to generate a key and certificate to secure communication between client and server 
+      li 
+        |pg module: this node module has the ability to stop SQL injection attacks.
+      li 
+        |Built custom software to check user input for profile CRUD operations
+      li 
+        |Used the module csurf (formerly csrf) module to prevent csrf attacks 
+    h1
+      mark
+        |Limitations and further improvements
+    ul
+      li
+        |The app's ability to analyze webpages is limited to text-based pages (HTML, XML, and the alike)
+      li
+        |User is not able to set up an unique preference for what he/she considers an ideal time to consider a sentence/word "memorized"
+      li
+        |Running multiple parts of the app across different domains can be changed to prevent cross-domain requests
+      li
+        |Translations are not found 100% of the time. This is a limitation of Glosbe, since their API is fairly basic (a paid service like Google Translate would improve results)
+      li
+        |The SRS study view does not hide the particular word being studied (as we originally planned to use a 'cloze deletions' format), but rather immediately shows the entire sentence. This would be the next thing to fix in ongoing development of the project.
+      li
+        b On the HeatMap page, the define-on-hover requests may fail to load (since Glosbe uses http and we serve https). Because of this, Firefox users may experience a "Blocked loading mixed active content" warning. To fix this, click the shield near the address bar and select "Disable Protection On This Page"
+      li
+        b Browsers running AdBlock sometimes create an automatic filter for heatmap.js, preventing it from executing (fixed by disabling AdBlock)
+      li
+        |In the future, we will add ability to allow user sort tables by their columns
+  
+      
+      

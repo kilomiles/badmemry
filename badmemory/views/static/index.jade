@@ -1,0 +1,30 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - Painless Vocabulary Acquisition
+
+block body
+  .jumbotron
+    .container
+      h1 Painless Vocabulary Acquisition
+      h2 For people learning to read foreign languages:
+      h3 Find Pages. Pick Words. Study Sentences.
+      p
+        | Collect sample sentences for the words you are interested in, from the webpages you are interested in. Automatically produce 
+        a(href='http://en.wikipedia.org/wiki/Spaced_repetition') SRS flashcards
+        |  for study strategies like 
+        a(href='http://www.alljapaneseallthetime.com/blog/10000-sentences-how') 10,000 sentences
+        |  or 
+        a(href='http://www.alljapaneseallthetime.com/blog/10000-sentences-is-dead-long-live-mcds') MCD
+        | . Then review your way to reading comprehension. All in one place.
+      p
+        a(href='about/') How it works »
+  .disclaimer.pull-right
+    p
+      a(rel='license', href='http://creativecommons.org/licenses/by-sa/4.0/')
+        img(alt='Creative Commons License', style='border-width: 0; margin-right:3px', src='http://i.creativecommons.org/l/by-sa/4.0/80x15.png')
+      a(href='https://flic.kr/p/8agsb6') Photo
+      |  by 
+      a(href='https://www.flickr.com/photos/samhames/') Sam Hames
+
+  include ../includes/signup_form_fancy

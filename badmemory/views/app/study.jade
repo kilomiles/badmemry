@@ -1,0 +1,38 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - HeatMap
+  link(rel='stylesheet', href='/stylesheets/study.css')
+
+block content
+  #study_panel
+    #study_card
+      #card_content
+        p Loading study cards...
+      #study_buttons(class='btn-group btn-group-justified', onclick='')
+        #score_zero(class='btn btn-default score', onclick='') 0
+        #score_one(class='btn btn-default score', onclick='') 1
+        #score_two(class='btn btn-default score', onclick='') 2
+        #score_three(class='btn btn-default score', onclick='') 3
+        #score_four(class='btn btn-default score', onclick='') 4
+        #score_five(class='btn btn-default score', onclick='') 5
+
+    #flip_card
+      span(class="glyphicon glyphicon-repeat toggle")
+      br
+      span#delete_sentence(class="glyphicon glyphicon-trash" style="margin-top:10px;")
+
+    #side_b
+      p Analyzing card...
+
+  #status_bar(class='progress')
+    #bar(class='progress-bar' role='progressbar' style='width:0%')
+
+
+
+append scripts
+  script.
+    var username = "#{user.username}";
+  script(src='js/srs_helper.js')
+  script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js')
+  script(src='js/jquery.flip.min.js')

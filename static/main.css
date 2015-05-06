@@ -1,0 +1,251 @@
+/* floating navbar */
+
+.navbar {
+    font-size: 20px;
+}
+
+.navbar #logo-a {
+    color: #CC0066;
+}
+
+.navbar-brand:hover #logo-a {
+    color: white;
+}
+
+.navbar #logo-b {
+    color: white;
+}
+
+.navbar #sign-in {
+    color: #0099FF;
+}
+
+.navbar #sign-in:hover {
+    color: white;
+}
+
+.navbar-brand:hover #logo-b {
+    color: gray;
+}
+
+/* jumbotron */
+
+.jumbotron {
+    background-image: url('jumbotron.jpg');
+    padding-top: 50px;
+    margin-bottom: 0px;
+}
+ 
+.disclaimer {
+    font-size: 12px;
+    font-color: gray;
+    margin-right: 20px;
+}
+
+.jumbotron h1 {
+    font-size: 28px;
+}
+
+.jumbotron h2 {
+    font-size: 22px;
+}
+
+.jumbotron h3 {
+    font-size: 20px;
+}
+
+
+/* page content */
+
+body {
+    background-color: #F1E2E2;
+}
+
+.content {
+    /* background-color: #EEEEEE; */
+    background-color: white;
+    padding: 60px 5% 20px 5%;
+}
+
+.content h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.content h2 {
+    margin-bottom: 10px;
+}
+
+.content h3 {
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-left: 20px;
+    text-indent: 2em;
+    font-size: 18px;
+}
+
+.content ul {
+    margin-left: 40px;
+}
+
+.content ol {
+    margin-left: 40px;
+}
+
+.content #benefits {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.inner-column p {
+    font-size: 16px;
+}
+
+.inner-column h2 {
+    display: inline;
+}
+
+.button-panel {
+    width:21%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2%;
+}
+
+.button-panel a {
+    width: 100%;
+}
+
+.row {
+    padding-top: 1%;
+    outline: 1px dashed black;
+}
+
+.container-fluid {
+    margin-top: 51px;
+    outline: 2px dashed gray;
+    background-color: #EEEEEE;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+/* roadmap items */
+
+ul.backlog {
+    list-style-type: none;
+}
+
+.backlog li {
+    padding: 2px 0px 2px 0px;
+}
+
+.backlog li > span {
+    padding: 2px 2px 2px 2px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.backlog .est1 {
+    background-color: #99FF99;
+}
+
+.backlog .est2 {
+    background-color: #FFFF99;
+}
+
+.backlog .est3 {
+    background-color: #FF9999;
+}
+
+.schedule li {
+    padding: 2px 0px 2px 0px;
+}
+
+.schedule li > span {
+    background-color: #EEEEEE;
+    padding: 2px 2px 2px 2px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* team member highlights */
+.highlight {
+    display: block;
+    min-height: 360px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 14px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team_pic {
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #e1e1e8;
+    height: 240px;
+}
+
+
+/* signup form */
+
+.signup-form {
+    font-size: 18px;
+    padding-top: 25px;
+    padding-bottom: 40px;
+}
+
+.signup-form form {
+    padding-right: 12px;
+}
+
+.signup-form form input {
+    display: block;
+    width: 100%;
+    margin: 10px 10px 10px 10px;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+.signup-form form button {
+    margin-left: 10px; padding-left: 5px;
+}
+
+.signup-form #disclaimer {
+    font-size: 16px;
+    color: #555555;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* footer */
+
+.footer {
+    padding-top: 15px;
+    padding-bottom: 4px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+
+.footer p {
+    font-size: 12px;
+    color: gray;
+}
+
+.footer a {
+    color: #222222;
+}
+
+.background_id{
+	background-image:url('background.png');
+	background-repeat:repeat-xy;
+}

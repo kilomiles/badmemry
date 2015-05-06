@@ -1,0 +1,122 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - Project Roadmap
+  
+block content
+  h1 Project Roadmap
+  p
+    | We plan to implement Bad Memory as our CSC309 term project, finishing most of the functionality by the Project 2 deadline on July 22. Project 3 will be devoted to addressing any issues with the performance and security of the website, including a stress-test of the functionality by both real and simulated users.
+  h2 Product Backlog
+  p
+    | The below product backlog ranks tasks from 1 to 3 in order of difficulty. We do not provide exact time estimates because time-to-implement may vary depending on the skill level of the teammate doing the task, and how much time is spent studying prior reference materials.
+  h3 Backend Functionality
+  ul.backlog
+    li
+      span.est3 3
+      | Basic Database Design: tables for sentences, words, pages; operation log; indexing for search.
+    li
+      span.est2 2
+      | REST API for Database: issue database operations through a RESTful API.
+    li
+      span.est2 2
+      | Scrape Simple Webpages: obtain the text of a webpage and use it to populate the database with sentences and words.
+    li
+      span.est3 3
+      | Store Webpages in Account: store a full copy of the webpage in the user's account.
+  h3 Management Interface
+  ul.backlog
+    li
+      span.est1 1
+      | Account Signup & Management: standard features to create an account, manage password, log in & out.
+    li
+      span.est1 1
+      | Sentence, Word, Page Tables: display tables of corresponding database entries.
+    li
+      span.est2 2
+      | Search Functionality: allow to user to filter the tables according to various attributes.
+    li
+      span.est1 1
+      | Manually Add Webpages & Sentences: form allowing the user to manually add a URL or text fragment for study.
+    li
+      span.est2 2
+      | Add Webpages via Bookmarklet: provide a bookmarklet (with install instructions) that adds the current URL to Bad Memory.
+    li
+      span.est3 3
+      | Heatmap UI: colour and highlight words according to their study status; click to add/remove from study list.
+    li
+      span.est3 3
+      | Show Website Contents with Heatmap UI: display a web page, with the heatmap applied to the text (similarly to Google Translate).
+    li
+      span.est2 2
+      | Obtain Definitions from Dictionary: hover in heatmap view for a definition; add dictionary entry to sample sentences.
+  h3 Study Interface
+  ul.backlog
+    li
+      span.est2 2
+      | Generate Study Cards from Sentences: follow formats such as 
+      a(href='#') MCD
+      |  or 
+      a(href='#') 10,000 sentences
+      | , depending on the user's preferences.
+    li
+      span.est2 2
+      a(href='http://www.supermemo.com/english/ol/sm2.htm') SuperMemo2
+      |  Algorithm: provide REST operations to record a review for a given card.
+    li
+      span.est2 2
+      | Provide Review Statistics and Study Goals: the study goals are used to adjust the suggested number of reviews/new cards per day.
+    li
+      span.est1 1
+      | Display Review Statistics in Chart Form: these will be visible in the profile screen.
+    li
+      span.est2 2
+      | Study Screen: display a card for review and allow the user to score themselves.
+  h2 Sprint Backlog
+  p
+    | Our first sprint will last a week, 
+    span.dates June 16 to June 23
+    | . We plan to implement the following functionality:
+  ul.backlog
+    li
+      span.est3 3
+      | Basic Database Design
+    li
+      span.est2 2
+      | REST API for Database
+    li
+      span.est2 2
+      | Scrape Simple Webpages
+    li
+      span.est1 1
+      | Manually Add Webpages & Sentences
+    li
+      span.est2 2
+      | Obtain Definitions from Dictionary
+    li
+      span.est1 1
+      | Sentence, Word, Page Tables
+    li
+      span.est1 1
+      | Account Signup & Management
+  p
+    | This provides a basic interface and the ability to use it to populate the database with real data for the further implementation sprints to make use of.
+  h2 Future Sprints
+  p
+    | The content of further sprints will be decided on a weekly basis, depending on progress made during the previous week.
+  ol.schedule
+    li
+      span.dates June 24 to July 1
+      | second functionality sprint – SuperMemo2 studying + statistics, webpage scraping+storage enhancements.
+    li
+      span.dates July 2 to July 8
+      | third functionality sprint – bookmarklet, webpage reading view.
+    li
+      span.dates July 9 to July 15
+      | final sprint for Project 2; polish and release the web application.
+    li
+      span.dates July 16 to July 22
+      | address security and scaling issues for Project 3.
+    li
+      span.dates July 23 to ??
+      em further sprints as necessary to address Project 3 issues....

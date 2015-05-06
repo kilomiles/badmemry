@@ -1,0 +1,99 @@
+html(lang='en')
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Pages | Project Bad Memory - Foreign Language Vocabulary the Lazy Way
+    //
+       Bootstrap 
+    link(href='../css/bootstrap.min.css', rel='stylesheet')
+    //
+       Our own stylings 
+    link(type='text/css', rel='stylesheet', href='pages.css')
+    //
+       HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries 
+    //
+       WARNING: Respond.js doesn't work if you view the page via file:// 
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body
+    //
+       TODOXXX navbar styling 
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            //
+               TODOXXX test the collapse stuff on mobile, use logo for this 
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          //
+             TODOXXX this should be logo, and should link to main page 
+          a.navbar-brand(href='#')
+            span.bad bad
+            | memory
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#study') Study
+            li
+              a(href='#words') Words
+            li
+              a(href='#sentences') Sentences
+            li.active
+              a(href='#') Pages
+          form.navbar-form.navbar-right(role='form')
+            a#username(href='#') Kevin Zeeger
+            .form-group
+              button.btn.btn-danger(type='submit') Log Out
+        //
+          /.nav-collapse 
+    .container
+      form.form-horizontal(action='', method='POST')
+        fieldset
+          #legend
+            legend. Register
+          .control-group
+            //
+               Username 
+            label.control-label(for='username') Username
+            .controls
+              input#username.input-xlarge(type='text', name='username', placeholder='')
+              p.help-block Username can contain any letters or numbers, without spaces
+          .control-group
+            //
+               E-mail 
+            label.control-label(for='email') E-mail
+            .controls
+              input#email.input-xlarge(type='text', name='email', placeholder='')
+              p.help-block Please provide your E-mail
+          .control-group
+            //
+               Password
+            label.control-label(for='password') Password
+            .controls
+              input#password.input-xlarge(type='password', name='password', placeholder='')
+              p.help-block Password should be at least 4 characters
+          .control-group
+            //
+               Password 
+            label.control-label(for='password_confirm') Password (Confirm)
+            .controls
+              input#password_confirm.input-xlarge(type='password', name='password_confirm', placeholder='')
+              p.help-block Please confirm password
+          .control-group
+            //
+               Button 
+            .controls
+              button.btn.btn-success Register
+    //
+       JavaScript placed at the end of the document so the pages load faster 
+    //
+       Optional: Include the jQuery library 
+    script(src='//code.jquery.com/jquery-1.7.2.min.js')
+    //
+       Optional: Incorporate the Bootstrap JavaScript plugins 
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')

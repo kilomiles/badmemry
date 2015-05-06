@@ -1,0 +1,84 @@
+doctype html
+html(lang="en")
+  head
+    meta(http-equiv="content-type" content="text/html" charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name="csrf-token", content="#{token}")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    <!--[if lt IE 9]>
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    <![endif]-->
+    
+    block head
+  body
+    //- TODOXXX set .active on the relevant portion of the navbar
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        a.navbar-brand(href='/')
+          span#logo-a bad
+          span#logo-b memory
+        button.navbar-toggle(data-toggle='collapse', data-target='.navHeaderCollapse')
+          // This nonsense turns into a "menu" icon.
+          span.sr-only Toggle Navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        .collapse.navbar-collapse.navHeaderCollapse
+          ul.nav.navbar-nav.navbar-left
+             //- li: a(href="/") bad memory
+             if user && user.username === 'admin'
+               // special case: admin console
+               //- TODOXXX admin console links should be in red
+               li: a(href="/admin") debug
+               li: a(href="/admin/users") users
+             else if user && user.username
+               // for logged-in users
+               li: a(href="/heatmap") heatmap
+               li: a(href="/study") study
+               li: a(href="/words") words
+               li: a(href="/pages") pages
+               li: a(href="/sentences") sentences
+             else
+               // static website
+               li: a(href="/report") Project Report
+          ul.nav.navbar-nav.navbar-right
+            if user && user.username
+              //logged in users can log out 
+              li: a(href="/logout")  Logout
+              li: a(href="/user_progress") #{user.username}
+            else 
+              //for users not logged in 
+              li.dropdown#menuLogin
+                a.dropdown-toggle(href='#' data-toggle='dropdown') Login
+                .dropdown-menu(style='padding: 17px;')
+                  form(action='/login' method='post').form#formLogin
+                    input(type='hidden', name='_csrf', value='#{csrf}')
+                    input#username(style='margin-bottom:10px' name='login_username', type='text', placeholder='Username')
+                    br
+                    input#password(style='margin-bottom:10px' name='login_password', type='password', placeholder='Password')
+                    br
+                    button#btnLogin.btn.btn-default(type='submit') SignIn
+
+    block body
+      //- TODOXXX need to add background-id for some pages but not others
+      .content
+        block content
+    
+    // Bootstrap & jQuery JS (load last of all) 
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/signup_script.js')
+    script(src="js/ajax_csrf_setup.js")
+    block scripts
+      
+    .footer
+      p
+        | Copyright © 2014 
+        a(href='/team') Team Bad Memory
+        | .

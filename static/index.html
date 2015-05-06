@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Project Bad Memory - Painless Vocabulary Acquisition</title>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><span id="logo-a">bad</span> <span id="logo-b">memory</span></a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <!-- This nonsense turns into a "menu" icon. -->
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="how_it_works.html">How It Works</a></li>
+            <li><a href="project_roadmap.html">Project Roadmap</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="sign-in" href="#">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Painless Vocabulary Acquisition</h1>
+        <h2>For people learning to read foreign languages:</h2>
+        <h3>Find Pages. Pick Words. Study Sentences.</h3>
+        <p>Collect sample sentences for the words you are interested in, from the webpages you are interested in. Automatically produce <a href="http://en.wikipedia.org/wiki/Spaced_repetition">SRS flashcards</a> for study strategies like <a href="http://www.alljapaneseallthetime.com/blog/10000-sentences-how">10,000 sentences</a> or <a href="http://www.alljapaneseallthetime.com/blog/10000-sentences-is-dead-long-live-mcds">MCD</a>. Then review your way to reading comprehension. All in one place.</p>
+        <p><a href="how_it_works.html">How it works &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="disclaimer pull-right">
+        <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+        <a href="https://flic.kr/p/8agsb6">Photo</a> by <a href="https://www.flickr.com/photos/samhames/">Sam Hames</a></p> 
+    </div>
+
+    <div class="signup-form background_id">
+      <div class="container">
+        <h3>Sign up for Bad Memory:</h3>
+        <div class="row">
+          <div class="col-md-8">
+            <form>
+              <!-- TODOXXX get rid of br, use display:block -->
+              <input type="text" name="username" placeholder="Pick a username" />
+              <input type="text" name="email" placeholder="Enter your email address" />
+              <input type="password" name="password" placeholder="Select a password" />
+              <input type="password" name="password2" placeholder="Confirm your password" />
+              <!-- XXX password strength meter appears here -->
+              <button type="button">Sign Up &raquo;</button>
+            </form>
+          </div>
+          <!-- TODOXXX drop below on collapse -->
+          <div class="col-md-4">
+            <p id="disclaimer">By signing up for Bad Memory, you indicate agreement to our <a href="#">terms of service</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap & jQuery JS (load last of all) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>    <script src="js/bootstrap.min.js"></script>
+
+    <div class="footer">
+      <p>Copyright &copy; 2014 <a href="about.html">Team Bad Memory</a>.</p>
+    </div>
+  </body>
+</html>

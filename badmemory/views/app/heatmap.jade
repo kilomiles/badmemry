@@ -1,0 +1,47 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - HeatMap
+  link(rel='stylesheet', href='/stylesheets/heatmap.css')
+  link(rel='stylesheet', href='//cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.css')
+
+block body
+  #siteContainer(class='container-fluid')
+    #siteWell(class='well')
+      p(style='text-align:center') <b>To get started, enter the URL of a webpage you want to learn from and click "View"</b>
+
+    #pageActions
+      #siteAddress
+        div(class='col-lg-6')
+          div(class='input-group')
+            input#textbox_url(type='text' name='web_url' placeholder='Enter a URL' class='form-control')
+            span(class='input-group-btn')
+              button#btn_submit_url(class='btn btn-default' type='button') View
+
+      #studyWords(class='panel panel-info')
+        #study-words-head(class='panel-heading')
+          | Study List
+          a#clear_studywords(class='btn btn-xs btn-info pull-right')
+            span(class='glyphicon glyphicon-trash')
+            | Clear list
+          a#enable_highlight(class='btn btn-xs btn-success pull-right')
+            span(class='glyphicon glyphicon-eye-open')
+            | Preview
+          a#disable_highlight(class='btn btn-xs btn-default pull-right')
+            span(class='glyphicon glyphicon-align-justify')
+            | Article
+        ul#study-word.list-group
+
+      #studyInfo(class='panel panel-warning')
+        #study-info-head(class='panel-heading current-word')
+          | Word Information
+        #wordInfo(class='panel-body')
+          | To see definitions and sample sentences, click a word on the Study List.
+
+append scripts
+  // qTip scripts
+  script(src='js/jquery.qtip.js')
+  script(src='js/heatmap.js')
+  script.
+    var username = "#{user.username}"
+  

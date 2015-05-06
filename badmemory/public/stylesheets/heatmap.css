@@ -1,0 +1,113 @@
+body {
+    padding-top: 50px;
+    height: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+object {
+    width: 100%;
+    min-height: 100%;
+}  
+
+h1 {
+    padding-top: 0.5%;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.lead {
+    padding: 12px 10px;
+    text-align: center;
+
+}
+
+.headline_grabber {
+	margin: auto;
+	width: 50%;
+}
+
+#all_content {
+    background-color: #F7F7F9;
+    padding-bottom: 2%;
+}
+
+.navbar-brand {
+    color: #0F0F09;
+}
+
+
+.navbar-brand .bad {
+    color: #CC0066;
+}
+
+.ui-tooltip-translate{
+    max-width: 800px;
+    min-width: 0px;
+    margin-left: 5px;
+}
+
+.btn {
+	margin-left:10px;
+}
+
+#siteAddress {
+    float: left;
+    margin-top: 1%;
+    width: 64.2%;
+    margin-left: 7%;
+}
+
+.glyphicon {
+    padding-right: 4px;
+}
+
+p {
+	cursor: default;
+}
+
+.steps {
+    font-size: 12pt;
+    text-align: left;
+}
+
+.steps-container {
+    display: table;
+    margin: 0 auto;
+}
+
+#translate-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#studyWords {
+    width: 30%;
+    float:left;
+    margin-left: 8%;
+    margin-top: 1%
+}
+
+#studyInfo {
+    float: right;
+    width: 53%;
+    margin-right: 8%;
+    margin-top: -2.4%;
+}
+
+#siteContainer {
+    outline: 2px dashed gray;
+    background-color: #EEEEEE;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#siteWell {
+    width: 84%;
+    margin: 0 auto;
+}

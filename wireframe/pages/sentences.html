@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../../static/main.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Project Bad Memory - Sentences</title>    	
+  </head>
+
+   <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <!-- TODOXXX test the collapse stuff on mobile, use logo for this -->
+            <span class="sr-only">Toggle Navigation</span>
+          </button>
+          <!-- TODOXXX this should be logo, and should link to main page -->
+          <a class="navbar-brand" href="http://localhost:3000"><span id="logo-a">bad</span> <span id="logo-b">memory</span></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">HeatMap</a></li>
+          </ul>
+          <form class="navbar-form pull-right" method="get">
+            <div class="form-group">
+              <input type="text" class="form-control" id="textbox_url" name="web_url" autocomplete="off" placeholder="Enter a URL">
+              <input type="button" value="View" class="btn" id="btn_submit_url"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="site_container"> <p style="text-align:center;"><b>To get started, enter the URL of a webpage you want to learn from and click "View"</b></p>
+    </div>
+
+    <div class="footer">
+      <p>Copyright &copy; 2014 <a href="about.html">Team Bad Memory</a>.</p>
+    </div>
+    
+    <!-- Bootstrap & jQuery JS (load last of all) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+
+    function getScrapedHTML() {
+    		var url = $('#textbox_url').val();
+	    	if (url.length == 0) {return;}
+	    	if (url.substring(0,4) !== "http") {url = "http://" + url;} 
+	  
+	    	$.get('http://127.0.0.1:8080/data?web_url='+ url + "&username=" + "fakeUser", function(data) {
+	    		$('.container-fluid').empty();
+	    		$('.container-fluid').append(data);
+    		});
+    }
+    	$("#btn_submit_url").click(function() {
+    		getScrapedHTML();
+    	});
+    	$("#textbox_url").keypress(function(key) {
+    		if (key.which == 13) {
+    		   	key.preventDefault();
+    			getScrapedHTML();
+    		}
+    	});
+    </script>
+    </body>
+</html>

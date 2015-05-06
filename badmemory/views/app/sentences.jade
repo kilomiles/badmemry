@@ -1,0 +1,133 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - Sentences
+  link(rel='stylesheet', href='./stylesheets/pages.css')
+
+block content
+  .container
+    h1 Your Sentences
+    label Filter sentences from a specific page.
+    div
+      form(method='get' class='well form-search' style='width: 27%; float:left;')
+        .form-group
+          img#search-icon-img(src='/images/search-icon.png')
+          input.input-medium.search-query#textbox_url(class='form-control' type='text' name='web_url' autocomplete='off' placeholder='Enter a URL')
+          input#btn_submit_url(class='btn' type='button' value='Filter')
+      form.well(style='float:right; width:17%;')
+        label Filter
+        br
+        input#checkbox-filter(type='checkbox')
+        | Hide completed
+    h2
+      br
+      br
+      br
+      br
+      span#table_description Results
+  
+    // Table of results from the search.
+    table.table.table-striped.table-bordered.table-condensed
+      thead
+        tr
+          th Progress
+          th Text
+          th Date Added
+          th Last Studied
+          th
+      tbody
+        each sentence in sentences
+          tr.tr_sentence
+            td.sentence_progress
+              - sentence.progress = Math.round(sentence.interval / 365.0 * 100);
+              - if (sentence.progress > 100) sentence.progress = 100;
+              if sentence.progress >= 100
+                span.finished= sentence.progress + "%"
+              else if sentence.progress >= 50
+                span.progressing= sentence.progress + "%"
+              else
+                span.started= sentence.progress + "%"
+            td= sentence.text
+            td= sentence.createdAt
+            if sentence.lastStudied === null
+              td= "Never"
+            else
+              td= sentence.lastStudied
+            td
+              a(href='javascript:;')
+                img.trash-icon-img(alt="#{sentence.id}", src='images/trash-icon.png')
+                
+
+
+block scripts
+  script.
+    var url = (window.location.search.split('=')[1])
+    if (url && url.length > 4) {
+    getSentences(url)
+    }
+    
+    
+    function getSentences(url){
+    if (url.length == 0){
+      return
+    }
+    if (url.substring(0,4) !== "http"){
+      url = "http://" + url
+    }
+    if (url && url.length > 4) {
+    url = decodeURIComponent(url)
+    // TODOXXX getFilteredPages
+    $.get("/get_sentences?username=" + "#{user.username}" + "&url=" + url, function(data) {
+    if (data && data.length) {
+    $('.tr_sentence').remove();
+    $('#table_description').html('Filtered results from <strong>' + url + '</strong>.');
+    for (i=0; i < data.length; i++){
+    var sentenceProgress = Math.round(data[i].interval /365.0 * 100);
+    if (sentenceProgress > 100) {sentenceProgress = 100;}
+    if (sentenceProgress >= 100) {var spanner = '<span class="finished">' + sentenceProgress + "%" + '</span>';}
+    else if (sentenceProgress >= 50) {var spanner = '<span class="progressing">' + sentenceProgress + "%" + '</span>';}
+    else {var spanner = '<span class="started">' + sentenceProgress + "%" + '</span>';}
+    if (!data[i].lastStudied) {
+    $('tbody').append('<tr class="tr_sentence"><td>' + spanner + '</td><td>' + data[i].text.replace(/(<([^>]+)>)/ig,"") + '</td><td>' + data[i].createdAt.split("T")[0] + '</td><td>' + "Never" + '</td><td><a href="javascript:;"><img class="trash-icon-img" src="images/trash-icon.png" alt=' + data[i].id + '></a></td></tr>')
+    } else {
+    $('tbody').append('<tr class="tr_sentence"><td>' + spanner + '</td><td>' + data[i].text.replace(/(<([^>]+)>)/ig,"") + '</td><td>' + data[i].createdAt.split("T")[0] + '</td><td>' + data[i].lastStudied.split("T")[0] + '</td><td><a href="javascript:;"><img class="trash-icon-img" src="images/trash-icon.png" alt=' + data[i].id + '></a></td></tr>')}
+    }
+    } else {
+    $('.tr_sentence').remove()
+    $('#table_description').html('Sorry, you do not seem to have <strong>' + url + '</strong> in your repo. Go to the <a href="/pages">Pages</a> subpage to add it!')
+    }
+    });
+    }
+    }
+    
+    $("#btn_submit_url").click(function(){
+    getSentences($('#textbox_url').val())
+    });
+    $("#textbox_url").keypress(function(key) {
+    if (key.which == 13){
+      key.preventDefault()
+      getSentences($('#textbox_url').val())
+    }
+    });
+    
+    $("table").on("click", ".trash-icon-img", function() {
+    var sentenceId = parseInt($(this).attr("alt"));
+    $(this).closest(".tr_sentence").remove();
+    console.log(sentenceId + "removed from DB");
+    $.post("/delete_sentence?username=" + "#{user.username}" + "&id=" + sentenceId);
+    });
+    
+    //Hide rows that have checkboxes ticked
+    $('#checkbox-filter').change(function() {
+    if ($('#checkbox-filter').is(':checked')){
+    console.log("Checkbox is now checked. Hide all completed!");
+    $('.tr_sentence').each(function() {
+    if ($(this).find('.sentence_progress').text() === "100%") {$(this).closest('tr').hide();}
+    });
+    } else if ($('#checkbox-filter').not(':checked')){
+    console.log("Checkbox is now unchecked. Show all rows!");
+    $('.tr_sentence').each(function() {
+    $(this).closest('tr').show();
+    });
+    }
+    });

@@ -1,0 +1,24 @@
+if user
+  .signup-form.background_id
+    .container
+      h3 Sign up for Bad Memory:
+      .row
+        .col-md-8
+          form(action='/signup' method='post')
+            input(type='hidden', name='_csrf', value='#{csrf}')
+            input(type='text', name='username', placeholder='Pick a username')
+            input(type='text', name='email', placeholder='Enter your email address')
+            input(type='password', name='password', placeholder='Select a password')
+            input(type='password', name='password2', placeholder='Confirm your password' onchange='checkPasswordMatch()')
+            #divCheckPasswordMatch
+            if message && message.length
+                .alert.alert-info #{message}
+            //
+               XXX password strength meter appears here 
+            button.pull-right.btn-default.btn(type='submit' id='password_button') Sign Up »
+
+        .col-md-4
+          p#disclaimer
+            | By signing up for Bad Memory, you indicate agreement to our 
+            a(href='#') terms of service
+            | .

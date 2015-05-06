@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+var debug = require('debug')('badmemory');
+
+//multiple node server apps
+var app1 = require('../app');
+var app2 = require('../app');
+var app3 = require('../app');
+
+
+var https = require("https");
+var http = require("http");
+var fs = require("fs");
+
+var options = {
+    key: fs.readFileSync('lib/key.pem'),
+    cert: fs.readFileSync('lib/cert.pem')
+    };
+
+//server 1
+var server1 = https.createServer(options, app1);
+
+server1.listen(4000, function(){
+    debug('Express server listening on port ' + server1.address().port);
+});
+
+//server 2
+var server2 = https.createServer(options, app2);
+
+server2.listen(4001, function(){
+    debug('Express server listening on port ' + server2.address().port);
+});
+
+//server 3
+var server3 = https.createServer(options, app3);
+
+server3.listen(4002, function(){
+    debug('Express server listening on port ' + server3.address().port);
+});
+

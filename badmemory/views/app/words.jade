@@ -1,0 +1,45 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - Words
+  link(rel='stylesheet', href='./stylesheets/pages.css')
+
+block content
+  .container(style="margin-top:-5%;")
+    h1 Your Words
+    // Table of results from the search.
+    table.table.table-striped.table-bordered.table-condensed
+      thead
+        tr
+          th Progress
+          th Word
+          th Definition
+          th Date Added
+          th Last Studied
+          th
+      tbody
+        each word in words
+          tr
+            td
+              if word.progress >= 100
+                span.finished= word.progress + "%"
+              else if word.progress >= 50
+                span.progressing= word.progress + "%"
+              else
+                span.started= word.progress + "%"
+            td #{word.text}
+            td!= word.definition
+            td #{word.createdAt}
+            td #{word.updatedAt}
+            td
+              a(href='javascript:;')
+                img.trash-icon-img(alt="#{word.id}", src='images/trash-icon.png')
+                  
+block scripts
+  script.   
+    $("table").on("click", ".trash-icon-img", function() {
+      var wordId = parseInt($(this).attr("alt"));
+      $(this).closest("tr").remove();
+      $.post("/delete_word?username=" + "#{user.username}" + "&id=" + wordId);
+      console.log("Removed word with ID " + wordId + " from database.");  
+    });

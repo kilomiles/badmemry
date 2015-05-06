@@ -1,0 +1,141 @@
+<!-- Settings page -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pages | Project Bad Memory - Foreign Language Vocabulary the Lazy Way</title>
+
+        <!-- Bootstrap -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+
+        <!-- Our own stylings -->
+        <link type = "text/css" rel="stylesheet" href="pages.css" >
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <!-- TODOXXX test the collapse stuff on mobile, use logo for this -->
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- TODOXXX this should be logo, and should link to main page -->
+                <a class="navbar-brand" href="#"><span class="bad">bad</span> memory</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#study">Study</a></li>
+                    <li><a href="#words">Words</a></li>
+                    <li><a href="#sentences">Sentences</a></li>
+                    <li class="active"><a href="#">Pages</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="form">
+                    <a href="#" id="username">Kevin Zeeger</a>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">Log Out</button>
+                    </div>
+                </form>
+                
+            </div><!--/.nav-collapse -->
+        
+    </div>
+
+
+ 	 <div class="container-fluid">
+ 	 
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="user_overview.html">Overview</a></li>
+            <li class="active"><a href="#">Account Settings</a></li>
+            <li><a href="#">Bad Memory Settings</a></li>
+          </ul> 
+        </div>
+        
+        
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+   	 <form role="form">
+  		<div class="form-group">
+  			<h2 class="page-header">Basic Information</h2>
+    		<label for="realName">Name</label>
+    		<input type="text" class="form-control" id="realName" placeholder="Enter Name">
+    		</br>
+    		<label for="education">Education</label>
+    		<input type="text" class="form-control" id="education" placeholder="Education">
+    		</br>
+			<button type="submit" class="btn btn-default">Save Information</button>
+  		</div>
+  		<div class="form-group">
+  			<h2 class="page-header">Change Email</h2>
+    		<label for="userEmail">New Email</label>
+    		<input type="text" class="form-control" id="userEmail" placeholder="joedoe@example.com">
+    		</br>
+    		<label for="pwdVerification">Password</label>
+    		<input type="password" class="form-control" id="pwdVerification" placeholder="Password">
+    		</br>
+    		<button type="submit" class="btn btn-default">Save New Email</button>
+  		</div>
+  		
+  		<div class="form-group">
+  			<h2 class="page-header">Change password</h2>
+    		<label for="pwdVerification">Old Password</label>
+    		<input type="password" class="form-control" id="pwdVerification" placeholder="Old Password">
+    		</br>
+    		<label for="newPwd1">New password</label>
+    		<input type="password" class="form-control" id="newPwd1" placeholder="Old Password">
+    		</br>
+    		<label for="newPwd2">Re-type new password</label>
+    		<input type="password" class="form-control" id="newPwd2" placeholder="New Password">
+    		</br>
+    		<button type="submit" class="btn btn-default">Change Password</button>
+  		</div>
+
+        <div class="form-group">
+  			<h2 class="page-header">Delete Account</h2>
+            <h4>Note, this process is NOT reversible</h4>
+    		<label for="pwdVerification">Enter Password</label>
+    		<input type="password" class="form-control" id="pwdVerification" placeholder="Password">
+    		</br>
+    		<button type="submit" class="btn btn-default">Delete Account</button>
+  		</div>
+  	
+	</form>
+    </br>
+    </br>
+
+    </div>
+      
+      
+      
+      
+      </div>
+     
+	  
+	</div>  
+  
+  
+  
+    <!-- JavaScript placed at the end of the document so the pages load faster -->
+    <!-- Optional: Include the jQuery library -->
+    
+    
+    <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

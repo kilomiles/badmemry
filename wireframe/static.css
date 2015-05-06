@@ -1,0 +1,65 @@
+body {
+    padding-top: 50px;
+}
+
+h1 {
+    padding: 18px 10px;
+    text-align: center;
+}
+
+.lead {
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.form_info {
+	padding: 3px;
+	margin: 2px;
+}
+
+.sign_up_div {
+	margin: auto;
+	width: 50%;
+	
+}
+
+.sign_up_form {
+	margin: auto;
+	padding-left: 15%
+}
+
+.headline_grabber {
+	margin: auto;
+	width: 50%;
+}
+
+#home_color {
+	background-color: #6DD5F7;
+	border-radius: 5px;
+}
+
+.navbar-brand {
+    color: #0F0F09;
+}
+
+.highlight {
+	padding: 20px 20px 20px 20px;
+	margin-bottom: 14px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
+	width: 80%;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-brand .bad {
+    color: #CC0066;
+}
+
+.team_pic{
+	display: block;
+    width:75%;
+
+}
+

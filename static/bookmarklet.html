@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="main.css" />
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<title>Project Bad Memory - Bookmarklet</title>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><span id="logo-a">bad</span> <span id="logo-b">memory</span></a>
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<!-- This nonsense turns into a "menu" icon. -->
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="active"><a href="#">Bookmarklet</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a id="sign-in" href="#">Sign In</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Main header and button -->
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Bad Memory Bookmarklet</h1>
+				<p class="lead">Add your favourite foreign language pages to Bad Memory with the click of a single button.</p>
+			</div>
+
+			<div class="panel panel-success button-panel">
+				<div class="panel-heading">Drag this button to your Bookmarks Bar!</div>
+				<div class="panel-body"><a class="btn btn-lg btn-success" href="javascript:function sendToBadMemory(){window.location='http://www.badmemory.ca/add_url?url='+encodeURIComponent(document.location.href);}sendToBadMemory();void(0)" role="button">Add to Bad Memory</a></div>
+			</div>
+
+			<div class="container">	 
+				<div class="row background_id">
+					<div class="col-md-4 inner-column">
+						<span class="glyphicon glyphicon-info-sign"></span><h2> How does it work?</h2>
+						<p>When you visit a page whose foreign language content you'd like to learn, you simply click the Bad Memory button in your bookmarks tab and the page will be added to your list of webpages.</p>
+					</div>
+					<div class="col-md-4 inner-column">
+						<span class="glyphicon glyphicon-question-sign"></span><h2> But why?</h2>
+						<p>Using our bookmarklet allows you to add pages from anywhere on the web to your Bad Memory database at the click of a button. Instead of copying, pasting and switching pages, all it takes is one click. 4 words: it saves you time!</p>
+					</div>
+					<div class="col-md-4 inner-column">
+						<span class="glyphicon glyphicon-lock"></span><h2> Safe and secure</h2>
+						<p>Your safety is our #1 priority! Using this bookmarklet is as safe as adding a page to your webpage list manually. There's no need to install any software. Just drag the above green button to your bookmarks tab and that's it!</p>
+					</div> 
+				</div>
+			</div>
+		</div>
+		
+		<!-- Bootstrap & jQuery JS (load last of all) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>		<script src="js/bootstrap.min.js"></script>
+
+		<div class="footer">
+			<p>Copyright &copy; 2014 <a href="about.html">Team Bad Memory</a>.</p>
+		</div>
+	</body>
+</html>

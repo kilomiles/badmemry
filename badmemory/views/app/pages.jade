@@ -1,0 +1,118 @@
+extends ../layout
+
+block head
+  title Project Bad Memory - Pages
+  link(rel='stylesheet', href='./stylesheets/pages.css')
+
+block content
+  .container
+    h1 Your Pages
+    // Search box with button.
+    label Look up new pages to add to your study list.
+    div
+      form(method='get' class='well form-search' style='width: 27%; float:left;')
+        img#search-icon-img(src='/images/search-icon.png')
+        input.input-medium.search-query(type='text' name='web_url' autocomplete='off' placeholder='Enter a URL')
+        input(class='btn btn-primary' type='button' value='Import')
+      form.well(style='float:right; width:17%;')
+        label Filter
+        br
+        input#checkbox-filter(type='checkbox')
+        | Hide completed
+    h2
+      br
+      br
+      br
+      | Results
+    // Table of results from the search.
+    table.table.table-striped.table-bordered.table-condensed
+      thead
+        tr
+          th Progress
+          th Title/URL
+          th Date Added
+          th Last Studied
+          th
+      tbody
+        each page in pages
+          tr.table_row
+            td.page_progress
+              if page.progress >= 100
+                span.finished= page.progress + "%"
+              else if page.progress >= 50
+                span.progressing= page.progress + "%"
+              else
+                span.started= page.progress + "%"
+            td
+              img.star-icon-img(width='25px', length='25px', src='images/full-star-icon.png')
+              a(href='/sentences?url='+"#{page.url}")              
+                strong
+                  = page.title
+              br
+              = page.url
+              td #{page.createdAt}
+              td #{page.updatedAt}
+              td
+                a(href='#')
+                  img.trash-icon-img(alt="#{page.id}", src='images/trash-icon.png')
+                  
+block scripts
+  script.
+    var url = (window.location.search.split('=')[1])
+    if (url && url.length > 4) {
+      getScrapedHTML(url);
+    }
+  
+    function getScrapedHTML(url) {
+      if (url.length == 0) {
+        return;
+      }
+      if (url.substring(0,4) !== "http"){
+        url = "http://" + url;
+      }
+      $.post('/scrape_data?web_url='+ url + "&username=" + "#{user.username}", function(data) {
+        location.replace(document.location.href.split("?")[0]);
+      });
+    }
+    
+    $(".btn-primary").click(function() {
+      getScrapedHTML($('.search-query').val());
+    });
+    
+    $(".search-query").keypress(function(key) {
+      if (key.which == 13) {
+        key.preventDefault();
+        getScrapedHTML($('.search-query').val());
+      }
+    });
+    
+    $(".trash-icon-img").click(function() {
+      var row = $(this).parent().parent().parent();
+      var pageId = parseInt($(this).attr("alt")); #{csrf}
+      $.post("/delete_page?id=" + pageId + "&username=" + "#{user.username}");
+      row.remove();
+    });
+    
+    //Set all checkboxes to be unchecked by default
+    var checkboxes = document.getElementsByTagName('input');
+    for (var i=0; i<checkboxes.length; i++){
+    if (checkboxes[i].type == 'checkbox'){
+    checkboxes[i].checked = false;
+    }
+    }
+    
+    //Hide rows that have checkboxes ticked
+    $('#checkbox-filter').change(function() {
+    if ($('#checkbox-filter').is(':checked')){
+    console.log("Checkbox is now checked. Hide all completed!");
+    $('.table_row').each(function() {
+    if ($(this).find('.page_progress').text() === "100%") {$(this).closest('tr').hide();}
+    });
+    } else if ($('#checkbox-filter').not(':checked')){
+    console.log("Checkbox is now unchecked. Show all rows!");
+    $('.table_row').each(function() {
+    $(this).closest('tr').show();
+    });
+    }
+    });
+

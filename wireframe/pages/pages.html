@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pages | Project Bad Memory - Foreign Language Vocabulary the Lazy Way</title>
+
+        <!-- Bootstrap -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Our own stylings -->
+        <link type = "text/css" rel="stylesheet" href="pages.css" >
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+
+<body>
+    <!-- TODOXXX navbar styling -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <!-- TODOXXX test the collapse stuff on mobile, use logo for this -->
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- TODOXXX this should be logo, and should link to main page -->
+                <a class="navbar-brand" href="#"><span class="bad">bad</span> memory</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#study">Study</a></li>
+                    <li><a href="#words">Words</a></li>
+                    <li><a href="#sentences">Sentences</a></li>
+                    <li class="active"><a href="#">Pages</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="form">
+                    <a href="#" id="username">Kevin Zeeger</a>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">Log Out</button>
+                    </div>
+                </form>
+                
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container">
+        <h1>Your Pages</h1>
+        
+        <!-- Search box with button. -->
+        <label>Look up new pages to add to your study list.</label>
+        <div>
+        <form class="well form-search" style="width: 27%; float:left;">
+            <img src="images/search-icon.png" id="search-icon-img">
+            <input type="text" placeholder="Search pages" class="input-medium search-query">
+            <button type="submit" class="btn btn-primary">Look up!</button>
+        </form>
+        <form class="well" style="float:right; width:17%;">
+            <label>Filter</label><br>
+            <input type="checkbox" id="checkbox-filter"> Hide completed
+        </form>
+        </div>
+        <h2></br></br></br>Results</h2>
+        
+        <!-- Table of results from the search. -->
+        <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>&#10003;</th>
+                    <th>Progress</th>
+                    <th>Title/URL</th>
+                    <th>Date Added</th>
+                    <th>Last Studied</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                    <input type="checkbox"></td>
+                    <td><img src="images/pie-chart-2.png" class="pie-icon-img" width="25px" length="25px"> 90/95</td>
+                    <td><a href="#"><img src="images/empty-star-icon.png" class="star-icon-img" width="25px" length="25px"></a>Turkish Dick and Jane</br>
+                        <a href="http://turkeybooks.com/dandj.html">http://turkeybooks.com/dandj.html</a></td>
+                    <td>2014/04/14</td>
+                    <td>Yesterday</td>
+                    <td><a href="#"><img src="images/trash-icon.png" class="trash-icon-img"></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox"></td>
+                    <td><img src="images/pie-chart-5.png" class="pie-icon-img" width="25px" length="25px"> 40/98</td>
+                    <td><a href="#"><img src="images/full-star-icon.png" class="star-icon-img" width="25px" length="25px"></a>Turkish Lord of the Rings</br>
+                        <a href="http://theturkishrepublic.tr/lotr.htm">http://theturkishrepublic.tr/lotr.htm</a></td>
+                    <td>2013/11/30</td>
+                    <td>14 days ago</td>
+                    <td><a href="#"><img src="images/trash-icon.png" class="trash-icon-img"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- JavaScript placed at the end of the document so the pages load faster -->
+    <!-- Optional: Include the jQuery library -->
+    <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
+    
+    <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

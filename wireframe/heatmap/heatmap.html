@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Bad Memory - HeatMap</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- qTip2 -->
+    <link href="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.css" rel="stylesheet">
+    <!-- Our own stylings -->
+    <link href="heatmap.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <!-- TODOXXX test the collapse stuff on mobile, use logo for this -->
+            <span class="sr-only">Toggle Navigation</span>
+          </button>
+          <!-- TODOXXX this should be logo, and should link to main page -->
+          <a class="navbar-brand" href="#"><span class="bad">bad</span> memory</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">HeatMap</a></li>
+          </ul>
+          <form class="navbar-form pull-right" id='addressForm' method="post">
+            <div class="form-group">
+              <input type="text" class="form-control" name="siteURL" autocomplete="off" placeholder="Enter a URL">
+              <input type="submit" value="View" class="btn"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" id="all_content">
+      <div class="headline_grabber">
+        <h1>Coming soon.</h1>
+        <h3>In the meantime, interact with the text below:</h3>
+        <div class="steps-container">
+          <p class="steps lead">1) Hover over words to see their translation (Latin to English)<br/>2) Click a word to add it to the Study List below<br/>3) Preview the article to quickly identify Study List words</p>
+        </div>
+      </div>
+
+      <!-- "Translatable" content -->
+      <div id="translate-content">
+        <div class="well">
+          <p class="translate">
+          Lucie est arrivée à la gare de Versailles. Elle a déjà vu le château de Versailles, mais elle veut, plus tard, en faire une visite plus approfondie.
+
+Mais d'abord, elle se promène sur l'avenue St. Cloud pour trouver l'appartement. Elle le trouve juste en face du poste de police, dans une petite maison en brique. Elle met ses bagages devant la barrière qui sépare le petit passage qui mène du trottoir à la porte de la maison. Elle presse la petite sonnette jaune qui est à côté du nom « Joséphine Gérard ».
+
+Sa copine, Joséphine, dont elle a fait la connaissance sur le Web, ouvre la porte. Joséphine lui fait deux bises. Stupéfaite, Lucie demande pourquoi elle a fait ça. « Ça se fait en France. Les filles se font deux bises, les mecs font deux bises aux filles, et entre eux, les mecs se serrent la main. On fait tout ça pour se dire bonjour ».
+
+« Viens avec moi, dit Joséphine, je vais te montrer l'appart', il est petit, mais c'est notre chez nous ». En silence, Lucie la suit. Stupéfaite, elle regarde l'entrée de cet appartement. Elle n'en croit pas ses yeux. Elle entre dans le couloir, et elle voit que les murs sont peints en rouge. Rouge partout. Le parquet est en bois, très beau, on dirait du chêne. Le plafond est noir. À gauche il y a une petite table en fer, dessus est posé le téléphone.
+
+Elle continue, et à gauche, il y a la salle de bain avec la chambre de Joséphine juste en face. Un peu plus loin, à droite, c'est la chambre de Lucie. Elle met toutes ses affaires dans un coin, s'allonge sur le lit, étend les jambes et les bras. « Je suis enfin arrivée chez moi », se dit-elle. </p>
+        </div>
+      </div>
+
+      <!-- Study List panel -->
+      <div class="panel-content">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Study List
+            <!-- Buttons -->
+            <a id="clear_studywords" class="btn btn-xs btn-info pull-right">
+            <span class="glyphicon glyphicon-trash"></span> Clear list</a>
+            <a id="enable_highlight" class="btn btn-xs btn-success pull-right">
+            <span class="glyphicon glyphicon-eye-open"></span> Preview</a>
+            <a id="disable_highlight" class="btn btn-xs btn-default pull-right">
+            <span class="glyphicon glyphicon-align-justify"></span> Article</a>
+          </div>
+          <!-- On click, translatable words are added to this group -->
+          <ul class="list-group" id="study_word"></ul>
+        </div>
+      </div>
+
+      <div class="panel-content">
+        <div class="panel panel-warning study-info">
+          <div class="panel-heading current-word">
+            Word Information
+          </div>
+          <div id="word-info" class="panel-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- qTip2 -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/heatmap.js"></script>
+  </body>
+</html>
+
